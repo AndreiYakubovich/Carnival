@@ -1,0 +1,11 @@
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Bll.deps.json
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Bll.dll
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Bll.pdb
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Data.dll
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Data.pdb
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.csprojResolveAssemblyReference.cache
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.csproj.CoreCompileInputs.cache
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.AssemblyInfoInputs.cache
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.AssemblyInfo.cs
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.dll
+C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.pdb
