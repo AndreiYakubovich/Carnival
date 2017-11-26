@@ -4,6 +4,7 @@ import { AuthGuard } from './security/auth-guard.service';
 
 import { AboutComponent } from './about.component';
 import { IndexComponent } from './index.component';
+import { ProfileComponent } from './profile.component';
 import { ContactComponent } from './contact.component';
 import { LoginComponent } from './login.component';
 import { RegisterComponent } from './register.component';
@@ -23,4 +24,4 @@ const appRoutes: Routes = [
 
 export const routing = RouterModule.forRoot(appRoutes);
 
-export const routedComponents = [AboutComponent, IndexComponent, ContactComponent, LoginComponent, RegisterComponent, ChangePasswordComponent, ManageComponent];
+export const routedComponents = [AboutComponent, IndexComponent, ContactComponent, LoginComponent, RegisterComponent, ChangePasswordComponent, ManageComponent, ProfileComponent];

@@ -1,0 +1,12 @@
+﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@addTagHelper *, Carnival.Web
+@using Carnival.Data.Models
+@model Carnival.Data.Models.UserProfile
+    <div>Ваш профиль:
+        <button type="button" class="btn btn-warning" (click)="addProfile($event)">Save</button>
+
+        <vfdi par="testData" for="Bio"></vfdi>
+        <vfdi par="testData" for="Name"></vfdi>
+        <button type="button" class="btn btn-info" (click)="getProfile()">Get Profile</button>
+    </div>
+

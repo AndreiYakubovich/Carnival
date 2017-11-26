@@ -6,6 +6,6 @@ namespace Carnival.Bll.Interfaces
 {
     public interface IProfileService
     {
-        Task<UserProfile> GetProfile(string id);
+        Task<UserProfile> GetOrCreateProfile(string id);
     }
 }

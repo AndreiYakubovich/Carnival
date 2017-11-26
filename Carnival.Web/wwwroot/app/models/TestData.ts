@@ -1,9 +1,7 @@
 ﻿import { Component } from '@angular/core';
 
 export class TestData {
-    id: number;
+    id: string;
     username: string;
-    currency: number;
-    emailAddress: string;
-    password: string;
+    text: string;
 }

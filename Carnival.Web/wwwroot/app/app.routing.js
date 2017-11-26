@@ -4,6 +4,7 @@ var router_1 = require("@angular/router");
 var auth_guard_service_1 = require("./security/auth-guard.service");
 var about_component_1 = require("./about.component");
 var index_component_1 = require("./index.component");
+var profile_component_1 = require("./profile.component");
 var contact_component_1 = require("./contact.component");
 var login_component_1 = require("./login.component");
 var register_component_1 = require("./register.component");
@@ -20,5 +21,5 @@ var appRoutes = [
     { path: 'contact', component: contact_component_1.ContactComponent, data: { title: 'Contact' } }
 ];
 exports.routing = router_1.RouterModule.forRoot(appRoutes);
-exports.routedComponents = [about_component_1.AboutComponent, index_component_1.IndexComponent, contact_component_1.ContactComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent, changePassword_component_1.ChangePasswordComponent, manage_component_1.ManageComponent];
+exports.routedComponents = [about_component_1.AboutComponent, index_component_1.IndexComponent, contact_component_1.ContactComponent, login_component_1.LoginComponent, register_component_1.RegisterComponent, changePassword_component_1.ChangePasswordComponent, manage_component_1.ManageComponent, profile_component_1.ProfileComponent];
 //# sourceMappingURL=app.routing.js.map

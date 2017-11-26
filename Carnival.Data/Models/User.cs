@@ -6,12 +6,17 @@ namespace Carnival.Data.Models
 {
     public class User : IdentityUser
     {
+        public User(string id)
+        {
+            Id = id;
+        }
+
         public User()
         {
             Id = Guid.NewGuid().ToString();
             DateCreated = DateTime.Today;
+           
         }
-
 
         public DateTime DateCreated { get; set; }
         

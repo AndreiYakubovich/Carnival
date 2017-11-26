@@ -11,6 +11,11 @@ namespace Carnival.Data.Models
             this.Id = Id;
         }
 
+        public UserProfile()
+        {
+
+        }
+
         public string Id { get; set; }
 
         public string Name { get; set; }

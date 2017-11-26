@@ -100,7 +100,7 @@ namespace Carnival.Web.Api
             ViewData["ReturnUrl"] = returnUrl;
             if (ModelState.IsValid)
             {
-                var user = new User { UserName = model.Email, Email = model.Email };
+                var user = new User() { UserName = model.Email, Email = model.Email };
                 IdentityResult result = await _accountService.Register(user, model);
                 if (result.Succeeded)
                 {

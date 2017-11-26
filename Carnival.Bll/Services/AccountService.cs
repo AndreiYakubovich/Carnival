@@ -1,6 +1,8 @@
-﻿using System.Security.Claims;
+﻿using System;
+using System.Security.Claims;
 using System.Threading.Tasks;
 using BLL.ViewModels.Account;
+using Carnival.Bll.AuthServices;
 using Carnival.Bll.Interfaces;
 using Carnival.Data;
 using Carnival.Data.Models;
@@ -14,6 +16,7 @@ namespace Carnival.Bll.Services
     {
         private readonly CarnivalContext _context;
         private readonly UserManager<User> _userManager;
+//        private readonly CustomUserManager _userManager;
         private readonly SignInManager<User> _signInManager;
 
 
@@ -57,8 +60,8 @@ namespace Carnival.Bll.Services
 
         public async Task<IdentityResult> Register(User user, RegisterViewModel model)
         {
-           Task<IdentityResult> result = _userManager.CreateAsync(user, model.Password);
-           return await result;
+            Task<IdentityResult> result = _userManager.CreateAsync(user, model.Password);
+            return await result;
         }
     }
 }

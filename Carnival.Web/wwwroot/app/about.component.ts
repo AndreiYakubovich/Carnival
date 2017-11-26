@@ -27,10 +27,8 @@ export class AboutComponent implements OnInit {
     initTestData(): TestData {
         var newTestData = new TestData();
         newTestData.id = null;
-        newTestData.currency = null;
-        newTestData.emailAddress = null;
-        newTestData.password = null;
         newTestData.username = null;
+        newTestData.text = null;
         return newTestData;
     }
 
@@ -38,7 +36,6 @@ export class AboutComponent implements OnInit {
         this.tableMode = 'add';
         this.getTestData();
         this.testData = this.initTestData();
-        this.testData.id = this.testDataList.length || 0;
         this.selectedItem = new TestData();
     }
 
@@ -46,7 +43,7 @@ export class AboutComponent implements OnInit {
         event.preventDefault();
         this.tableMode = newMode;
 
-        if (this.testDataList.length == 0 || this.testData == null) {
+        if (this.testDataList.length === 0 || this.testData == null) {
             this.tableMode = 'add';
         }
 
@@ -97,7 +94,7 @@ export class AboutComponent implements OnInit {
     getTestData() {
         this.sampleDataService.getSampleData()
             .subscribe((data: ViewModelResponse) => {
-                if (data != null && data.statusCode == 200) {
+                if (data != null && data.statusCode === 200) {
                     this.testDataList = data.value;
                     this.errorMessageService.showSuccess('Get', "data fetched ok");
                     if (this.testDataList != null && this.testDataList.length > 0) {
@@ -107,7 +104,7 @@ export class AboutComponent implements OnInit {
                         this.tableMode = 'add';
                     }
                 }
-                else if (data == null || data.statusCode == 204) {
+                else if (data == null || data.statusCode === 204) {
                     this.tableMode = 'add';
                     this.errorMessageService.showError('Get', "No data available");
                 }
@@ -126,7 +123,7 @@ export class AboutComponent implements OnInit {
         if (!this.testData) { return; }
         this.sampleDataService.editSampleData(this.testData)
             .subscribe((data: ViewModelResponse) => {
-                if (data != null && data.statusCode == 200) {
+                if (data != null && data.statusCode === 200) {
                     this.errorMessageService.showSuccess('Update', "updated ok");
                     this.testData = data.value;
                     this.getTestData();
@@ -144,7 +141,7 @@ export class AboutComponent implements OnInit {
         event.preventDefault();
         this.sampleDataService.deleteRecord(itemToDelete)
             .subscribe((data: ViewModelResponse) => {
-                if (data != null && data.statusCode == 200) {
+                if (data != null && data.statusCode === 200) {
                     this.errorMessageService.showSuccess('Delete', data.value);
                     this.getTestData();
                 }

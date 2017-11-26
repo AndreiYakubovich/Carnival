@@ -6,6 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Copy %281%29 wwwroot2\**" />
+    <Compile Remove="wwwroot2\**" />
+    <Compile Remove="wwwroot\Copy %281%29 wwwroot2\**" />
+    <Content Remove="Copy %281%29 wwwroot2\**" />
+    <Content Remove="wwwroot2\**" />
+    <Content Remove="wwwroot\Copy %281%29 wwwroot2\**" />
+    <EmbeddedResource Remove="Copy %281%29 wwwroot2\**" />
+    <EmbeddedResource Remove="wwwroot2\**" />
+    <EmbeddedResource Remove="wwwroot\Copy %281%29 wwwroot2\**" />
+    <None Remove="Copy %281%29 wwwroot2\**" />
+    <None Remove="wwwroot2\**" />
+    <None Remove="wwwroot\Copy %281%29 wwwroot2\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Humanizer.Core" Version="2.2.0" />
     <PackageReference Include="Humanizer.Core.ru" Version="2.2.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />

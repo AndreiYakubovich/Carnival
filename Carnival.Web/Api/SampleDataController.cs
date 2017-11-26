@@ -7,6 +7,7 @@ using Carnival.Bll.Interfaces;
 using Carnival.Data.Models;
 using Carnival.Web.Helpers;
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,11 +16,13 @@ namespace Carnival.Web.Api{
     [Route("api/sampleData")]
     public class SampleDataController : Controller
     {
-        private ISampleDataService _sampleDataService;
+        private IPostService _sampleDataService;
+        private readonly UserManager<User> _userManager;
 
-        public SampleDataController(ISampleDataService sampleDataService)
+        public SampleDataController(IPostService sampleDataService, UserManager<User> userManager)
         {
             _sampleDataService = sampleDataService;
+            _userManager = userManager;
         }
 
         /// <summary>
@@ -45,6 +48,7 @@ namespace Carnival.Web.Api{
         [HttpGet]
         public async Task<IActionResult> Get()
         {
+            var user = User;
             var testData = _sampleDataService.Get();
 
             if (!testData.Any())
@@ -65,6 +69,7 @@ namespace Carnival.Web.Api{
             {
                 return Json(BadRequest(results));
             }
+            value.Username = User.Identity.Name;
             var newTestData = _sampleDataService.Save(value);
             if (newTestData == null)
                 return Json(NotFound("An error occurred; new record not saved"));
@@ -93,7 +98,7 @@ namespace Carnival.Web.Api{
 
         // DELETE api/sampleData/5
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(int id)
+        public async Task<IActionResult> Delete(string id)
         {
             bool IsDeleted = await _sampleDataService.Delete(id);
             if (IsDeleted == false)

@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Carnival.Bll.Interfaces;
@@ -9,11 +10,11 @@ using Microsoft.EntityFrameworkCore.ChangeTracking;
 
 namespace Carnival.Bll.Services
 {
-    public class SampleDataService: ISampleDataService
+    public class PostService: IPostService
     {
         private readonly CarnivalContext _context;
 
-        public SampleDataService(CarnivalContext context)
+        public PostService(CarnivalContext context)
         {
             _context = context;
         }
@@ -34,10 +35,10 @@ namespace Carnival.Bll.Services
         {
             try
             {
+                value.Id = Guid.NewGuid().ToString();
                 Task<EntityEntry<TestData>> newTestData = _context.AddAsync(value);
                 await _context.SaveChangesAsync();
                 return await newTestData;
-
             }
             catch (DbUpdateException exception)
             {
@@ -68,11 +69,11 @@ namespace Carnival.Bll.Services
             }
         }
 
-        public async Task<bool> Delete(int id)
+        public async Task<bool> Delete(string id)
         {
             var testData = await _context.TestData
                 .AsNoTracking()
-                .SingleOrDefaultAsync(m => m.Id == id.ToString());
+                .SingleOrDefaultAsync(m => m.Id == id);
 
             if (testData == null)
             {

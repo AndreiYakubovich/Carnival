@@ -121,9 +121,10 @@ namespace Carnival.Web
 //
             services.AddTransient<IEmailSender, AuthMessageSender>();
             services.AddTransient<ISmsSender, AuthMessageSender>();
-            services.AddTransient<ISampleDataService, SampleDataService>();
+            services.AddTransient<IPostService, PostService>();
             services.AddTransient<IAccountService, AccountService>();
             services.AddTransient<IMaintenanceService, MaintenanceService>();
+            services.AddTransient<IProfileService, ProfileService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

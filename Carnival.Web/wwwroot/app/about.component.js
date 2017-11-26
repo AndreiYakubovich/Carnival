@@ -28,23 +28,20 @@ var AboutComponent = (function () {
     AboutComponent.prototype.initTestData = function () {
         var newTestData = new testData_1.TestData();
         newTestData.id = null;
-        newTestData.currency = null;
-        newTestData.emailAddress = null;
-        newTestData.password = null;
         newTestData.username = null;
+        newTestData.text = null;
         return newTestData;
     };
     AboutComponent.prototype.ngOnInit = function () {
         this.tableMode = 'add';
         this.getTestData();
         this.testData = this.initTestData();
-        this.testData.id = this.testDataList.length || 0;
         this.selectedItem = new testData_1.TestData();
     };
     AboutComponent.prototype.changeMode = function (newMode, thisItem, event) {
         event.preventDefault();
         this.tableMode = newMode;
-        if (this.testDataList.length == 0 || this.testData == null) {
+        if (this.testDataList.length === 0 || this.testData == null) {
             this.tableMode = 'add';
         }
         switch (newMode) {
@@ -92,7 +89,7 @@ var AboutComponent = (function () {
         var _this = this;
         this.sampleDataService.getSampleData()
             .subscribe(function (data) {
-            if (data != null && data.statusCode == 200) {
+            if (data != null && data.statusCode === 200) {
                 _this.testDataList = data.value;
                 _this.errorMessageService.showSuccess('Get', "data fetched ok");
                 if (_this.testDataList != null && _this.testDataList.length > 0) {
@@ -103,7 +100,7 @@ var AboutComponent = (function () {
                     _this.tableMode = 'add';
                 }
             }
-            else if (data == null || data.statusCode == 204) {
+            else if (data == null || data.statusCode === 204) {
                 _this.tableMode = 'add';
                 _this.errorMessageService.showError('Get', "No data available");
             }
@@ -123,7 +120,7 @@ var AboutComponent = (function () {
         }
         this.sampleDataService.editSampleData(this.testData)
             .subscribe(function (data) {
-            if (data != null && data.statusCode == 200) {
+            if (data != null && data.statusCode === 200) {
                 _this.errorMessageService.showSuccess('Update', "updated ok");
                 _this.testData = data.value;
                 _this.getTestData();
@@ -140,7 +137,7 @@ var AboutComponent = (function () {
         event.preventDefault();
         this.sampleDataService.deleteRecord(itemToDelete)
             .subscribe(function (data) {
-            if (data != null && data.statusCode == 200) {
+            if (data != null && data.statusCode === 200) {
                 _this.errorMessageService.showSuccess('Delete', data.value);
                 _this.getTestData();
             }

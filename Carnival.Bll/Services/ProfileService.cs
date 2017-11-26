@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System.Linq;
+using System.Threading.Tasks;
 using Carnival.Bll.Interfaces;
 using Carnival.Data;
 using Carnival.Data.Models;
@@ -9,16 +10,23 @@ namespace Carnival.Bll.Services
 {
     public class ProfileService:IProfileService
     {
-        private CarnivalContext _context;
+        private readonly CarnivalContext _context;
 
         public ProfileService(CarnivalContext context)
         {
             _context = context;
         }
 
-        public async Task<UserProfile> GetProfile(string id)
+        public async Task<UserProfile> GetOrCreateProfile(string id)
         {
-            return await _context.Profiles.SingleOrDefaultAsync(m => m.Id == id);
+            var newProfile = await _context.Profiles.FirstOrDefaultAsync(p=>p.Id == id);
+            if (newProfile == null)
+            {
+                newProfile = new UserProfile(id);
+                await _context.Profiles.AddAsync(newProfile);
+                await _context.SaveChangesAsync();
+            }
+            return newProfile;
         }
     }
 }
