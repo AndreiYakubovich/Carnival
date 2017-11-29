@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Carnival.Bll.Interfaces;
+using Carnival.Data.Models;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -39,8 +40,12 @@ namespace Carnival.Web.Api
         
         // POST: api/Profile
         [HttpPost]
-        public void Post([FromBody]string value)
+        public IActionResult Post([FromBody]UserProfile profile)
         {
+            var updatedProfile = _profileService.UpdateProfileAsync(profile);
+            if (updatedProfile == null)
+                return Json(NotFound("An error occurred; profile is not updated"));
+            return Json(Ok(updatedProfile.Result.Entity as UserProfile));
         }
         
         // PUT: api/Profile/5

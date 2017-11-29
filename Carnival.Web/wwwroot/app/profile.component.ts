@@ -19,6 +19,7 @@ import 'rxjs/add/operator/catch';
 export class ProfileComponent implements OnInit {
     profile: Profile = null;
     errorMessage: string;
+    tableMode: string = 'list';
 
     constructor(private profileservice: ProfileService, private errorMessageService: ErrorMessageService) { }
 
@@ -34,27 +35,35 @@ export class ProfileComponent implements OnInit {
         this.getProfile();
         this.profile = this.initTestData();
     }
-    // addTestData(event: any) {
-    //     event.preventDefault();
-    //     if (!this.testData) { return; }
-    //     this.sampleDataService.addSampleData(this.testData)
-    //         .subscribe((data: ViewModelResponse) => {
-    //                 if (data != null && data.statusCode == 200) {
-    //                     //use this to save network traffic; just pushes new record into existing
-    //                     this.testDataList.push(data.value);
-    //                     // or keep these 2 lines; subscribe to data, but then refresh all data anyway
-    //                     //this.testData = data.value;
-    //                     //this.getTestData();
-    //                     this.errorMessageService.showSuccess('Add', "data added ok");
-    //                 }
-    //                 else {
-    //                     this.errorMessageService.showError('Add', this.errorMessageService.formattedErrorResponse(data.value));
-    //                 }
-    //             },
-    //             (error: any) => {
-    //                 this.errorMessageService.showError('Get', JSON.stringify(error));
-    //             });
-    // }
+
+    changeMode(newMode: string, thisItem: Profile, event: any): void {
+        event.preventDefault();
+        this.tableMode = newMode;
+
+        switch (newMode) {
+            case 'edit':
+                this.profile = Object.assign({}, thisItem);
+                break;
+
+            case 'list':
+            default:
+                this.profile = Object.assign({}, thisItem);
+                break;
+        }
+    }
+
+    SaveProfile(event: any) {
+        event.preventDefault();
+        if (!this.profile) { return; }
+        this.profileservice.addProfile(this.profile)
+            .subscribe((data: ViewModelResponse) => {
+                        this.errorMessageService.showSuccess('Add', "ok");
+                         this.tableMode='list'
+                },
+                (error: any) => {
+                    this.errorMessageService.showError('Get', JSON.stringify(error));
+                });
+    }
 
     getProfile() {
         this.profileservice.getProfile()

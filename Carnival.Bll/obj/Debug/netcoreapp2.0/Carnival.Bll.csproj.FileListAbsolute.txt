@@ -9,3 +9,14 @@ C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Ca
 C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.AssemblyInfo.cs
 C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.dll
 C:\Users\Andrei\source\repos\STP Project\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Bll.deps.json
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Bll.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Bll.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Data.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\bin\Debug\netcoreapp2.0\Carnival.Data.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.csprojResolveAssemblyReference.cache
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.csproj.CoreCompileInputs.cache
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.AssemblyInfoInputs.cache
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.AssemblyInfo.cs
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Bll\obj\Debug\netcoreapp2.0\Carnival.Bll.pdb

@@ -7,5 +7,6 @@ namespace Carnival.Bll.Interfaces
     public interface IProfileService
     {
         Task<UserProfile> GetOrCreateProfile(string id);
+        Task<EntityEntry<UserProfile>> UpdateProfileAsync(UserProfile profile);
     }
 }

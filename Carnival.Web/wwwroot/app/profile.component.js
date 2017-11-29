@@ -20,6 +20,7 @@ var ProfileComponent = (function () {
         this.profileservice = profileservice;
         this.errorMessageService = errorMessageService;
         this.profile = null;
+        this.tableMode = 'list';
     }
     ProfileComponent.prototype.initTestData = function () {
         var newProfile = new Profile_1.Profile();
@@ -32,27 +33,33 @@ var ProfileComponent = (function () {
         this.getProfile();
         this.profile = this.initTestData();
     };
-    // addTestData(event: any) {
-    //     event.preventDefault();
-    //     if (!this.testData) { return; }
-    //     this.sampleDataService.addSampleData(this.testData)
-    //         .subscribe((data: ViewModelResponse) => {
-    //                 if (data != null && data.statusCode == 200) {
-    //                     //use this to save network traffic; just pushes new record into existing
-    //                     this.testDataList.push(data.value);
-    //                     // or keep these 2 lines; subscribe to data, but then refresh all data anyway
-    //                     //this.testData = data.value;
-    //                     //this.getTestData();
-    //                     this.errorMessageService.showSuccess('Add', "data added ok");
-    //                 }
-    //                 else {
-    //                     this.errorMessageService.showError('Add', this.errorMessageService.formattedErrorResponse(data.value));
-    //                 }
-    //             },
-    //             (error: any) => {
-    //                 this.errorMessageService.showError('Get', JSON.stringify(error));
-    //             });
-    // }
+    ProfileComponent.prototype.changeMode = function (newMode, thisItem, event) {
+        event.preventDefault();
+        this.tableMode = newMode;
+        switch (newMode) {
+            case 'edit':
+                this.profile = Object.assign({}, thisItem);
+                break;
+            case 'list':
+            default:
+                this.profile = Object.assign({}, thisItem);
+                break;
+        }
+    };
+    ProfileComponent.prototype.SaveProfile = function (event) {
+        var _this = this;
+        event.preventDefault();
+        if (!this.profile) {
+            return;
+        }
+        this.profileservice.addProfile(this.profile)
+            .subscribe(function (data) {
+            _this.errorMessageService.showSuccess('Add', "ok");
+            _this.tableMode = 'list';
+        }, function (error) {
+            _this.errorMessageService.showError('Get', JSON.stringify(error));
+        });
+    };
     ProfileComponent.prototype.getProfile = function () {
         var _this = this;
         this.profileservice.getProfile()

@@ -23,5 +23,9 @@ namespace Carnival.Web.Controllers
         public IActionResult ChangePasswordComponent() => PartialView();
 
         public IActionResult ProfileComponent() => PartialView();
+
+        public IActionResult BlogComponent() => PartialView();
+
+
     }
 }

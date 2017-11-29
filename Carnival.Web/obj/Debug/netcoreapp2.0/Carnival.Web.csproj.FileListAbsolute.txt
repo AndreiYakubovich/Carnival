@@ -13,3 +13,18 @@ C:\Users\Andrei\source\repos\STP Project\Carnival.Web\obj\Debug\netcoreapp2.0\Ca
 C:\Users\Andrei\source\repos\STP Project\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.AssemblyInfo.cs
 C:\Users\Andrei\source\repos\STP Project\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.dll
 C:\Users\Andrei\source\repos\STP Project\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Web.deps.json
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Web.runtimeconfig.json
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Web.runtimeconfig.dev.json
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Web.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Web.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Bll.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Data.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Bll.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\bin\Debug\netcoreapp2.0\Carnival.Data.pdb
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.csprojResolveAssemblyReference.cache
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.csproj.CoreCompileInputs.cache
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.AssemblyInfoInputs.cache
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.AssemblyInfo.cs
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.dll
+C:\Users\YAV\source\repos\Carnival\Carnival.Web\obj\Debug\netcoreapp2.0\Carnival.Web.pdb

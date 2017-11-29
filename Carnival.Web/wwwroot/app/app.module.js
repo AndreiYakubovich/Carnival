@@ -13,6 +13,7 @@ var app_routing_1 = require("./app.routing");
 var common_1 = require("@angular/common");
 var app_component_1 = require("./app.component");
 var profile_component_1 = require("./profile.component");
+var blog_component_1 = require("./blog.component");
 var forms_1 = require("@angular/forms");
 var http_1 = require("@angular/http");
 var ErrorMessageService_1 = require("./services/ErrorMessageService");
@@ -31,12 +32,12 @@ var AppModule = (function () {
 AppModule = __decorate([
     core_1.NgModule({
         imports: [animations_1.BrowserAnimationsModule, platform_browser_1.BrowserModule, forms_1.FormsModule, http_1.HttpModule, ngx_toastr_1.ToastrModule.forRoot(), app_routing_1.routing],
-        declarations: [app_component_1.AppComponent, app_routing_1.routedComponents, profile_component_1.ProfileComponent],
+        declarations: [app_component_1.AppComponent, app_routing_1.routedComponents, profile_component_1.ProfileComponent, blog_component_1.BlogComponent],
         providers: [sampleData_service_1.SampleDataService,
             ErrorMessageService_1.ErrorMessageService,
             auth_service_1.AuthService,
             Profile_service_1.ProfileService,
-            auth_guard_service_1.AuthGuard, platform_browser_1.Title, { provide: common_1.APP_BASE_HREF, useValue: '/webcore' }],
+            auth_guard_service_1.AuthGuard, platform_browser_1.Title, { provide: common_1.APP_BASE_HREF, useValue: '/carnival' }],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

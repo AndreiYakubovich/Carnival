@@ -5,6 +5,7 @@ import { routing, routedComponents } from './app.routing';
 import { APP_BASE_HREF, Location } from '@angular/common';
 import { AppComponent } from './app.component';
 import { ProfileComponent } from './profile.component';
+import { BlogComponent } from './blog.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ErrorMessageService } from './services/ErrorMessageService';
@@ -19,12 +20,12 @@ import './rxjs-operators';
 
 @NgModule({
     imports: [BrowserAnimationsModule, BrowserModule, FormsModule, HttpModule, ToastrModule.forRoot(), routing],
-    declarations: [AppComponent, routedComponents, ProfileComponent],
+    declarations: [AppComponent, routedComponents, ProfileComponent,BlogComponent],
     providers: [SampleDataService,
         ErrorMessageService,
         AuthService,
         ProfileService,
-        AuthGuard, Title, { provide: APP_BASE_HREF, useValue: '/webcore' }],
+        AuthGuard, Title, { provide: APP_BASE_HREF, useValue: '/carnival' }],
     bootstrap: [AppComponent]
 })
 export class AppModule { }
